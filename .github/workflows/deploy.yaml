@@ -23,7 +23,7 @@ jobs:
         working-directory: ${{ inputs.work-dir }}
     steps:
       - name: AWS Creds
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.CI_ROLE }}
           aws-region: ${{ inputs.aws-region }}
