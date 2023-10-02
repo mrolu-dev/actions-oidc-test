@@ -41,15 +41,19 @@ resource "aws_iam_role" "git_action" {
 }
 
 resource "aws_iam_policy" "git_action" {
-  name = "git-actions-oidc"
+  name        = "git-actions-oidc"
+  path        = "/"
+  description = "My git action policy"
 
   policy = jsonencode({
-    Statement = [{
-      Action   = ["*"]
-      Effect   = "Allow"
-      Resource = "*"
-    }]
-    Version = "2012-10-17"
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Action   = ["*"],
+        Effect   = "Allow",
+        Resource = "*"
+      }
+    ]
   })
 }
 

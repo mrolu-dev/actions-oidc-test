@@ -4,9 +4,9 @@
 terraform {
 
   #cloud {
-    #workspaces {
-      #name = "learn-terraform-eks"
-    #}
+  #workspaces {
+  #name = "learn-terraform-eks"
+  #}
   #}
 
   required_providers {
@@ -31,13 +31,13 @@ terraform {
     }
   }
 }
-  
+
 
 terraform {
   backend "s3" {
-    bucket = "laflortfstate"
-    key    = "eks/terraform.tfstate"
-    region = "us-west-2"
+    bucket  = "laflortfstate"
+    key     = "eks/terraform.tfstate"
+    region  = "us-west-2"
     encrypt = true
   }
 }
